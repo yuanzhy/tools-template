@@ -1,8 +1,3 @@
-/*
- * @(#)HttpUtil.java 2018年3月28日 下午1:30:01 com.thunisoft.a6 Copyright 2018
- * Thuisoft, Inc. All rights reserved. THUNISOFT PROPRIETARY/CONFIDENTIAL. Use
- * is subject to license terms.
- */
 package com.yuanzhy.tools.template.util;
 
 import org.apache.commons.io.IOUtils;

@@ -1,8 +1,3 @@
-/*
- * @(#)OSUtil.java 2018年3月27日 下午8:32:23 com.thunisoft.a6 Copyright 2018
- * Thuisoft, Inc. All rights reserved. THUNISOFT PROPRIETARY/CONFIDENTIAL. Use
- * is subject to license terms.
- */
 package com.yuanzhy.tools.template.util;
 
 import java.nio.file.attribute.PosixFilePermission;

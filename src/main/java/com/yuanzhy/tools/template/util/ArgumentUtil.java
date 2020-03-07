@@ -1,7 +1,5 @@
 package com.yuanzhy.tools.template.util;
 
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,7 +33,7 @@ public final class ArgumentUtil {
         String dateKey = key.concat("-date");
         Date date = (Date)argsMap.get(dateKey);
         if (date == null) {
-            date = DateUtil.parse(dateStr);
+            date = DateUtil.parseDate(dateStr);
             argsMap.put(dateKey, date); // 缓存起来，这样只解析一次
         }
         return date;
@@ -51,7 +49,7 @@ public final class ArgumentUtil {
     }
 
     public static void parseArgs(String[] args) {
-        if (ArrayUtils.isEmpty(args)) {
+        if (args == null || args.length == 0) {
             argsMap.put("path", getPath(null));
             return;
         }
@@ -88,7 +86,7 @@ public final class ArgumentUtil {
         } else if (param.startsWith("./")) {
             return jarPath + param.substring(1);
         } else if (param.startsWith("../")) {
-            int count = StringUtils.countMatches(param, "../");
+            int count = StringUtil.countMatches(param, "../");
             File path = new File(jarPath);
             for (int i = 0; i < count; i++) {
                 path = path.getParentFile();
